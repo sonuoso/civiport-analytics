@@ -1,0 +1,342 @@
+{
+  "data": {
+    "network": {
+      "4": {
+        "withdrawals": {
+          "0": [
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 10000000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1622855700,
+              "tx": "0x73801bf912067ad0b0ccf4405b113abe3e02afdecd40170840a6c5e2d23a39db"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 10000000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1622858400,
+              "tx": "0x0aba93d1e956e0c42c645d0f40cc0b188109bf47b73fbf4551613cecc9856881"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 5000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1622980800,
+              "tx": "0xc66fe6b89e6f226c366a31610145ba98d37c439d97787c00cca55352fae87ec4"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 150000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1623132000,
+              "tx": "0xd2b3590cebe747ebf2b5ca65065e4748feed73c5511e2ae35601df0179d671ff"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 2500000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1623304800,
+              "tx": "0x95ae43a96cf3cf0c1950dc8c3edd27bc1a13025d010bf1c4c3de86716da3d235"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 10000000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1623320400,
+              "tx": "0x4285c3c667da1a31225fa74bfbf56f23beb968a6ca3abac8ba61c52f6f022881"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 10000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1623510600,
+              "tx": "0xe8855d891b45405d0703dbee70e8eb4ed0984ecf068c17a39f49c2004bea781c"
+            }
+          ],
+          "1": [
+            
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 100000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 1,
+              "ts": 1623787800,
+              "tx": "0x5776b7124e684007f71dfe3881e037caf50990adc6a2c3261a5d9eac83bb00pp"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 3500000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 1,
+              "ts": 1623787810,
+              "tx": "0x5776b7124e684007f71dfe3881e037caf50990adc6a2c3261a5d9eac83010000"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 100000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 1,
+              "ts": 1623787560,
+              "tx": "0x5776b7124e684007f71dfe3881e037caf50990adc6a2c3261a5d9eac83001000"
+            }
+          ]
+        },
+        "deposits": {
+          "0": [
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 1000000000000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 0,
+              "ts": 1625220610,
+              "tx": "0x15396dd1f99589c4dc38b13e980a16f0bd6510b43d1194454faafcde49f4750e"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 15000000000000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 0,
+              "ts": 1625220600,
+              "tx": "0x15396dd1f99589c4dc38b13e980a16f0bd6510b43d1194454faafcde49f4750e"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 10500000000000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 0,
+              "ts": 1625220615,
+              "tx": "0x15396dd1f99589c4dc38b13e980a16f0bd6510b43d1194454faafcde49f4750e"
+            }
+          ],
+          "1": [
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 100000000000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 1,
+              "ts": 1625299850,
+              "tx": "0x6fc5bd5d009f5a65488ffa4c007999b70ad14d3b0e2df963c45e06bb4a000001"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 100000000000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 1,
+              "ts": 1625299835,
+              "tx": "0x6fc5bd5d009f5a65488ffa4c007999b70ad14d3b0e2df963c45e06bb4a000010"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 100000000000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 1,
+              "ts": 1625299805,
+              "tx": "0x6fc5bd5d009f5a65488ffa4c007999b70ad14d3b0e2df963c45e06bb4a000100"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 100000000000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 1,
+              "ts": 1625299650,
+              "tx": "0x6fc5bd5d009f5a65488ffa4c007999b70ad14d3b0e2df963c45e06bb4a110000"
+            }
+          ]
+        }
+      },
+      "5": {
+        "withdrawals": {
+          "0": [
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 15000000000000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 0,
+              "ts": 1625299600,
+              "tx": "0xf6292c502e4be6112340db236030d12bdbadf5e04fcda221b99bf7eedbf81d3a"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 60000000000000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 0,
+              "ts": 1625299806,
+              "tx": "0xf6292c502e4be6112340db236030d12bdbadf5e04fcda221b99bf7eedbf00001"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 35000000000000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 0,
+              "ts": 1625299810,
+              "tx": "0xf6292c502e4be6112340db236030d12bdbadf5e04fcda221b99bf7eedb100000"
+            }
+          ],
+          "1": [
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 10000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 1,
+              "ts": 1625584200,
+              "tx": "0x60f2c21e467e2ce8722a057f131ef9c355b45f2ac9b8bdb23c4e4061dd424c97"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 10000000000,
+              "sourceNet": 5,
+              "destNet": 4,
+              "token": 1,
+              "ts": 1625602200,
+              "tx": "0xf8a9208aab627e1b6bdc972fa09379c433a309dc5c224a672c3c1b7a7362eb0e"
+            }
+          ]
+        },
+        "deposits": {
+          "0": [
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 15000000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1625897400,
+              "tx": "0x23f4248ce94d45f2dac75c7d2412452d7b3251476c6202f3b072e5f9a83cb197"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 10500000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1625911560,
+              "tx": "0x2e82e0a48edede92deb3d4271837b5e0f92afce6fc4cf1e9a6af5855dd365937"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 1500000000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1626336360,
+              "tx": "0xe39383726b2a3e0cf28ba355c39e26b84821c30bb61fa5a77be0d83a40ae065c"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 35000000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1626343500,
+              "tx": "0xbc9baad77d3d0e54ec6494046966b802c4b751c99fc8c9d6347bacd01eb9afb4"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 10010000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1626361500,
+              "tx": "0x90c66d163b94f47cb5e8e9adef0dad35677d03509eed3cf732b4c556f56c9ba0"
+            },
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 10000000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 0,
+              "ts": 1626760800,
+              "tx": "0xd9ad439c869eeb43a93bc65d7543320bd901e5b4540c34fb547bbb05a629a201"
+            }
+          ],
+          "1": [
+            {
+              "address": "0xf50aced0016256bc3aee3b4dca2170c9c8cd3abb",
+              "amount": 100000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 1,
+              "ts": 1626768000,
+              "tx": "0x36a31f2af3d29c2866f2879ce6dc4ef08f13793491f03e5d03737a2dec57c51b"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 100000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 1,
+              "ts": 1626768150,
+              "tx": "0x36a31f2af3d29c2866f2879ce6dc4ef08f13793491f03e5d03737a2dec000100"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 2000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 1,
+              "ts": 1626768120,
+              "tx": "0x36a31f2af3d29c2866f2879ce6dc4ef08f13793491f03e5d03737a2dec10100"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 100000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 1,
+              "ts": 1626768105,
+              "tx": "0x36a31f2af3d29c2866f2879ce6dc4ef08f13793491f03e5d03737a2dec000101"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 100000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 1,
+              "ts": 1626768560,
+              "tx": "0x36a31f2af3d29c2866f2879ce6dc4ef08f13793491f03e5d03737a2dec020000"
+            },
+            {
+              "address": "0xDcF5690239bF501960a337D63b5B21E9D900BECC",
+              "amount": 100000000000000,
+              "sourceNet": 4,
+              "destNet": 5,
+              "token": 1,
+              "ts": 1626768165,
+              "tx": "0x36a31f2af3d29c2866f2879ce6dc4ef08f13793491f03e5d03737a2dec000165"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "code": 0
+}

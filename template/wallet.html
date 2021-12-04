@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Top Analytics -->
+<div class="top-analytics">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-8" style="overflow-wrap:break-word">
+                <h5 style="color:#5a5a5a">Wallet Address</h5>
+                <h5>{{data['wallet_teleports'][0]['address']}}</h5>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8" style="overflow-wrap:break-word">
+                <h5 style="color:#5a5a5a">Teleports</h5>
+                <h5>{{data['total_teleports']}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mid Analytics -->
+<div class="mid-analytics">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 mid-analytics-col-l">
+                        <div class="card" style="border: 0.5px solid #b0b0b0">
+                            <div class="card-body">
+                                <h5 class="card-title">Teleports by Token</h5>
+                                <p>All Token Teleports of the Wallet by Token.</p>
+                                <canvas id="walletTeleports"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mid-analytics-col-r">
+                        <div class="card" style="border: 0.5px solid #b0b0b0">
+                            <div class="card-body">
+                                <h5 class="card-title">Volume by Token</h5>
+                                <p>Total Teleported Volume by Token.</p>
+                                <canvas id="walletVolume"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="container-fluid">
+                <div class="row justify-content-between bottom-analytics">
+                    <div class="col-md-6">
+                        <h3>Teleport Transactions of Wallet</h3>
+                    </div>
+                </div>
+                <!-- Table Card -->
+                <div class="card table-responsive">
+                    <div class="card-body">
+                        <h5 class="card-title">All Transactions</h5>
+                        <table id="transactions" class="table table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Token</th>
+                                    <th>From/To</th>
+                                    <th>Transaction Hash</th>
+                                    <th>Timestamp</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in data['wallet_teleports'] :%}
+                                <tr>
+                                    <td>{{i['type']}}</td>
+                                    <td>{{i['token']}}</td>
+                                    <td>{{i['second_net']}}</td>
+                                    <td><a href="{{ url_for('transactions', tx=i['tx']) }}"><span class="text-truncate d-inline-block" >{{i['tx']}}</span></a></td>
+                                    <td style="white-space:nowrap">{{i['ts']}}</td>
+                                    <td>{{i['amount']}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block script %}
+    <!-- Charts JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- jQuery/DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>var wallet_chart = JSON.parse('{{ data | tojson | safe }}');</script>
+    <script src="/static/js/datatables-wallet.js"></script>
+
+    <script src="/static/js/charts-wallet.js"></script>
+
+
+    {% endblock %}

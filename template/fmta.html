@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Top Analytics -->
+<div class="top-analytics">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="row justify-content-center">
+          <div class="col-md-4 top-analytics-col-l">
+            <h5 style="color:#5a5a5a">FMTA Price</h5>
+            <h3>{{price['fundamenta']['usd']}}</h3>
+          </div>
+          <div class="col-md-4 top-analytics-col-c">
+            <h5 style="color:#5a5a5a">Trading Volume (24Hrs)</h5>
+            <h3>1000</h3>
+          </div>
+          <div class="col-md-4 top-analytics-col-r">
+            <h5 style="color:#5a5a5a">Fully Dilluted Market Cap</h5>
+            <h3>2</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Mid Analytics -->
+<div class="mid-analytics">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <div class="row justify-content-center">
+          <div class="col-md-6 mid-analytics-col-l">
+            <div class="card" style="border: 0.5px solid #b0b0b0">
+              <div class="card-body">
+                <h5 class="card-title">Teleport Transactions</h5>
+                <p>No. of Teleport Transactions of all Supported Tokens</p>
+                <canvas id="barChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mid-analytics-col-r">
+            <div class="card" style="border: 0.5px solid #b0b0b0">
+              <div class="card-body">
+                <h5 class="card-title">Token Volume</h5>
+                <p>Token Volume of Teleport Transactions</p>
+                <canvas id="myChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Search Bar -->
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class="container-fluid">
+        <div class="row justify-content-between bottom-analytics">
+          <h3>Transactions</h3>
+          <form class="form-inline">
+            <input class="form-control mr-2" type="search" placeholder="Search by Hash" aria-label="Search"
+              style="width:20rem">
+            <button class="btn btn-primary" type="submit" style="width:auto">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Table Card -->
+      <!-- <div class="card table-responsive">
+        <div class="card-body">
+          <h5 class="card-title">Deposits</h5>
+          <table class="table table-hover">
+            <tr class="table-light">
+              <th>Transaction ID</th>
+              <th>Timestamp</th>
+              <th>Address</th>
+              <th>Amount</th>
+            </tr>
+            {% for i in tx :%}
+            <tr>
+              <td><span class="text-truncate">{{i['tx']}}</span></td>
+              <td>{{i['ts']}}</td>
+              <td><span class="d-inline-block text-truncate" style="width:100%">{{i['address']}}</span></td>
+              <td>{{i['amount']}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+
+
+  var dateLabel = [], priceData = []
+
+  const fmtaHistory = async () => {
+    const response = await fetch('https://api.coingecko.com/api/v3/coins/fundamenta/market_chart?vs_currency=usd&days=30&interval=daily');
+    const historyJson = [
+      16341,
+      0.36363
+    ]
+  
+    dateLabel = historyJson[0]
+    priceData = historyJson[1]
+
+  }
+  // window.onload = document.getElementById("fmta-price").innerHTML(priceJson.fundamenta.usd)
+  const data = {
+    labels: dateLabel,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 00)',
+      data:priceData
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+  const configBar = {
+    type: 'bar',
+    data: data,
+    options: {}
+  };
+
+  const barChart = new Chart(
+    document.getElementById('barChart'),
+    configBar
+  );
+</script>
+{% endblock %}

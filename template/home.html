@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Top Analytics -->
+<div class="top-analytics">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="row justify-content-center">
+          <div class="col-md-4 top-analytics-col-l">
+            <h5 style="color:#5a5a5a">Total Teleports</h5>
+            <h3>{{data['teleports']}}</h3>
+          </div>
+          <div class="col-md-4 top-analytics-col-c">
+            <h5 style="color:#5a5a5a">Token Volume (24Hrs)</h5>
+            <h3>{{data['volume']}}</h3>
+          </div>
+          <div class="col-md-4 top-analytics-col-r">
+            <h5 style="color:#5a5a5a">Supported Tokens</h5>
+            <h3>{{data['tokens']}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Mid Analytics -->
+<div class="mid-analytics">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="row justify-content-center">
+          <div class="col-md-6 mid-analytics-col-l">
+            <div class="card" style="border: 0.5px solid #b0b0b0">
+              <div class="card-body">
+                <h5 class="card-title">Teleport Transactions</h5>
+                <p>No. of Teleport Transactions of all Supported Tokens.</p>
+                <!-- Daily/Weekly/Monthly Buttons -->
+                <div class="btn-group" aria-label="Basic radio toggle button group">
+                  <input type="radio" class="btn-check" name="btnTeleport" id="teleport_btnDaily" autocomplete="off" checked> 
+                  <label class="btn btn-outline-primary" for="teleport_btnDaily">Daily</label>
+
+                  <input type="radio" class="btn-check"  name="btnTeleport" id="teleport_btnWeekly" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="teleport_btnWeekly">Weekly</label>
+
+                  <input type="radio" class="btn-check" name="btnTeleport" id="teleport_btnMonthly" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="teleport_btnMonthly">Monthly</label>
+                </div>
+                <canvas id="barChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mid-analytics-col-r">
+            <div class="card" style="border: 0.5px solid #b0b0b0">
+              <div class="card-body">
+                <h5 class="card-title">All Token Volume</h5>
+                <p>Volume of All Token Transactions.</p>
+                <!-- Daily/Weekly/Monthly Buttons -->
+                <div class="btn-group" aria-label="Basic radio toggle button group">
+                  <input type="radio" class="btn-check" name="btnVolume" id="volume_btnDaily" autocomplete="off" checked>
+                  <label class="btn btn-outline-primary" for="volume_btnDaily">Daily</label>
+
+                  <input type="radio" class="btn-check" name="btnVolume" id="volume_btnWeekly" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="volume_btnWeekly">Weekly</label>
+
+                  <input type="radio" class="btn-check" name="btnVolume" id="volume_btnMonthly" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="volume_btnMonthly">Monthly</label>
+                </div>
+                <canvas id="lineChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="container-fluid">
+        <div class="row justify-content-between bottom-analytics">
+          <div class="col-md-6">
+            <h3>Transactions</h3>
+          </div>
+          <div class="col-md-6">
+            <div id="searchBar" class="container-fluid">
+              <!-- Search Bar -->
+              <div class="input-group">
+                <span class="input-group-text" style="color:#ffffff;background-color: #26a6db"><i
+                    class="fa fa-search"></i></span>
+                <input id="transactions-search" class="form-control mr-2" type="search"
+                  placeholder="Search by Hash/Token" aria-label="Search">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Table Card -->
+      <div class="card table-responsive">
+        <div class="card-body">
+          <h5 class="card-title">All Transactions</h5>
+          <table id="transactions" class="table table-hover" style="width:100%">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Token</th>
+                <th>Transaction Hash</th>
+                <th>Timestamp</th>
+                <th>Address</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in data['transactions'] :%}
+              <tr>
+                <td style="white-space:nowrap">{{i['type']}} From {{i['first_net']}} To {{i['second_net']}}</td>
+                <td>{{i['token']}}</td>
+                <td><a href="{{ url_for('transactions', tx=i['tx']) }}"><span class="text-truncate d-inline-block" style="width:15rem">{{i['tx']}}</span></a></td>
+                <td style="white-space:nowrap">{{i['ts']}}</td>
+                <td><a href="{{ url_for('wallet', address=i['address']) }}"><span class="text-truncate d-inline-block" style="width:15rem">{{i['address']}}</span></a></td>
+                <td>{{i['amount']}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row container-bottom-analytics justify-content-center">
+    <div class="col-md-10">
+      <div class="container-fluid">
+        <div class="row justify-content-between bottom-analytics">
+          <h3>Transactions by Chain</h3>
+        </div>
+      </div>
+      <!-- Table Card -->
+      <div class="card table-responsive">
+        <div class="card-body">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="input-group mb-3">
+                  <label class="input-group-text" style="color:#ffffff;background-color: #26a6db">Type</label>
+                  <select class="form-select" id="typeSelect">
+                    <option value="">All</option>
+                    <option value="Deposit">Deposit</option>
+                    <option value="Withdrawal">Withdrawal</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group mb-3">
+                  <label class="input-group-text" style="color:#ffffff;background-color: #26a6db">From</label>
+                  <select class="form-select" id="first_netSelect">
+                    <option value="">All</option>
+                    <option value="Rinkeby">Rinkeby</option>
+                    <option value="Goerli">Goerli</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="input-group mb-3">
+                  <label class="input-group-text" style="color:#ffffff;background-color: #26a6db">To</label>
+                  <select class="form-select" id="second_netSelect">
+                    <option value="">All</option>
+                    <option value="Rinkeby">Rinkeby</option>
+                    <option value="Goerli">Goerli</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <table id="transactions_chain" class="table table-hover" style="width:100%">
+            <thead>
+              <tr>
+                <th>Transaction Hash</th>
+                <th>Type</th>
+                <th>Token</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Timestamp</th>
+                <th>Address</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in data['transactions'] :%}
+              <tr>
+                <td><a href="{{ url_for('transactions', tx=i['tx']) }}"><span class="text-truncate d-inline-block" style="width:15rem">{{i['tx']}}</span></a></td>
+                <td>{{i['type']}}</td>
+                <td>{{i['token']}}</td>
+                <td>{{i['first_net']}}</td>
+                <td>{{i['second_net']}}</td>
+                <td style="white-space:nowrap">{{i['ts']}}</td>
+                <td><a href="{{ url_for('wallet', address=i['address']) }}"><span class="text-truncate d-inline-block" style="width:15rem">{{i['tx']}}</span></a></td>
+                <td>{{i['amount']}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<!-- Charts JS  -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- jQuery/DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+
+<script src="/static/js/datatables-home.js"></script>
+
+<script>
+  var chart_data = JSON.parse('{{ data | tojson | safe }}');
+</script>
+<script src="/static/js/charts.js"></script>
+
+{% endblock %}

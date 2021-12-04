@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Top Analytics -->
+
+<div class="top-analytics">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10" style="overflow-wrap:break-word">
+        <h5 style="color:#5a5a5a">Supported Tokens</h5>
+        <h5>Information of Supported Tokens on CiviPort Bridge.</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mid Analytics -->
+<div class="mid-analytics">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="row justify-content-center">
+          <div class="col-md-6 mid-analytics-col-l">
+            <div class="card" style="border: 0.5px solid #b0b0b0">
+              <div class="card-body">
+                <h5 class="card-title">Most Teleported Token</h5>
+                <p>Teleport Transactions for each Supported Token.</p>
+                <canvas id="tokenChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mid-analytics-col-r">
+            <div class="card" style="border: 0.5px solid #b0b0b0">
+              <div class="card-body">
+                <h5 class="card-title">Most Volume</h5>
+                <p>Overview of the Total Teleported Token Volume.</p>
+                <canvas id="volumeChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bottom-analytics">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <div class="row justify-content-center">
+          {% for i in tokens :%}
+          <div class="col-md-4 token-card">
+            <div class="card" style="border: 0.5px solid #b0b0b0">
+              <div class="card-body">
+                <p class="card-title" style="color:#5a5a5a">Token Name</p>
+                <h6 class="card-text">{{i['name']}}</h6>
+                <p class="card-title" style="color:#5a5a5a">Symbol</p>
+                <h6 class="card-text">{{i['symbol']}}</h6>
+                <p class="card-title" style="color:#5a5a5a">Contract Address</p>
+                <h6 class="card-text">{{i['contract']}}</h6>
+                <p class="card-title" style="color:#5a5a5a">Decimals</p>
+                <h6 class="card-text">{{i['decimal']}}</h6>
+                <p class="card-title" style="color:#5a5a5a">Supported Chains</p>
+                <h6 class="card-text">{{i['networks']}}</h6>
+                <p class="card-title" style="color:#5a5a5a"><a href="{{ url_for('token', token=i['symbol']) }}">View
+                    Stats</a></p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<!-- Charts JS  -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  var pie_data = JSON.parse('{{ data | tojson | safe }}');
+</script>
+<script src="/static/js/charts-token.js"></script>
+
+{% endblock %}

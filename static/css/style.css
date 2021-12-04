@@ -1,0 +1,119 @@
+.top-analytics {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.top-analytics-col-l {
+  background-color: #f8f9fa;
+  border: 0.5px solid #b0b0b0;
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.top-analytics-col-r {
+  background-color: #f8f9fa;
+  border: 0.5px solid #b0b0b0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.top-analytics-col-c {
+  background-color: #f8f9fa;
+  border-top: 0.5px solid #b0b0b0;
+  border-bottom: 0.5px solid #b0b0b0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .top-analytics-col-r,
+  .top-analytics-col-l,
+  .top-analytics-col-c {
+    background-color: #f8f9fa;
+    border: 0.5px solid #b0b0b0;
+    border-radius: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-analytics-col-c {
+    background-color: #f8f9fa;
+    border: 0.5px solid #b0b0b0;
+    border-radius: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.mid-analytics {
+  background-color: #f8f9fa;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .mid-analytics-col-r {
+    padding-top: 1rem;
+  }
+}
+
+.bottom-analytics {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.container-bottom-analytics {
+  padding-top: 1.5rem;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #c8e6e6;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.footer-top {
+  padding-top: 5rem;
+  padding-bottom: 1.5rem;
+}
+
+.main-bottom {
+  margin-bottom: 1.5rem;
+}
+
+.dataTables_wrapper .pagination {
+  justify-content: flex-end;
+}
+
+#searchBar {
+  padding: 0;
+}
+
+.tx-data {
+  padding-bottom: 1rem;
+}
+
+.token-card {
+  padding-top:0.5rem;
+  padding-bottom:0.5rem
+}
+
+#error-img {
+    height: auto;
+    width: 10rem
+}
+
+@media (max-width:768px) {
+#error-img {
+  height: auto;
+  width: 10rem
+}
+}
+

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Top Analytics -->
+<div class="top-analytics">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-8" style="overflow-wrap:break-word">
+                <h5 style="color:#5a5a5a">Transaction Hash</h5>
+                <h5>{{transaction_data[0]['tx']}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mid Analytics -->
+<div class="mid-analytics">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-8 mid-analytics-col-l">
+                <div class="card" style="border: 0.5px solid #b0b0b0">
+                    <div class="card-body">
+
+                        <h6 class="card-title" style="color:#5a5a5a">Type</h6>
+                        <h6 class="card-text tx-data">{{transaction_data[0]['type']}}</h6>
+                        <h6 class="card-title" style="color:#5a5a5a">Token</h6>
+                        <h6 class="card-text tx-data">{{transaction_data[0]['token']}}</h6>
+                        <h6 class="card-title" style="color:#5a5a5a">Source Chain</h6>
+                        <h6 class="card-text tx-data">{{transaction_data[0]['second_net']}}</h6>
+                        <h6 class="card-title" style="color:#5a5a5a">Desination Chain</h6>
+                        <h6 class="card-text tx-data">{{transaction_data[0]['first_net']}}</h6>
+                        <h6 class="card-title" style="color:#5a5a5a">Timestamp</h6>
+                        <h6 class="card-text tx-data">{{transaction_data[0]['ts']}}</h6>
+                        <h6 class="card-title" style="color:#5a5a5a">Wallet Address</h6>
+                        <h6 class="card-text tx-data">{{transaction_data[0]['address']}}</h6>
+                        <h6 class="card-title" style="color:#5a5a5a">Amount</h5>
+                        <h6 class="card-text tx-data">{{transaction_data[0]['amount']}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<!-- Charts JS  -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- jQuery/DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+
+<script src="/static/js/datatables-home.js"></script>
+
+
+<script src="/static/js/charts.js"></script>
+
+{% endblock %}
